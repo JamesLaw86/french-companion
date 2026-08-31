@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Yourself — French Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="tricolore"></span>French Companion</a>
+    <div class="nav-links">
+      <a href="tenses.html">Tenses</a>
+      <a href="spoken-french.html">Spoken French</a>
+      <a href="speaking-tricks.html">Speaking Tricks</a>
+      <a href="core-verbs.html">Core Verbs</a>
+      <a href="moods.html">Moods</a>
+      <a href="pronouns.html">Pronouns</a>
+      <a href="quiz.html" class="active">Quiz</a>
+    </div>
+    <button class="practice-toggle" id="practiceToggle" title="Blur English translations to test yourself">🙈 Practice</button>
+  </nav>
+</header>
+
+<main class="container">
+
+<div class="page-title">
+  <h1>Test Yourself</h1>
+  <p class="lede">Pick a topic (or take everything), answer, and get an explanation with
+  every answer — right or wrong. Questions come in a fresh random order each time.</p>
+</div>
+
+<div class="quiz-cats" id="quizCats"></div>
+
+<div id="quizArea"></div>
+
+</main>
+
+<footer class="site-footer">
+  <div>French Companion — a personal reference for French learners. <em>Bon courage&nbsp;!</em></div>
+</footer>
+
+<script>
+// ------------------------------------------------------------------
+// Question bank. Each question: category, question text, options,
+// index of the correct option, and an explanation shown afterwards.
+// To add a question, copy any block and edit it — that's the whole API.
+// ------------------------------------------------------------------
+const QUESTIONS = [
+  // ---- Tenses ----
+  { cat: "Tenses", q: "« Je ___ dans la rue quand j’ai vu l’accident. » (I was walking when I saw the accident)",
+    opts: ["marchais", "ai marché", "marcherai", "marche"], a: 0,
+    why: "Background action interrupted by an event → imparfait. The event (j’ai vu) is passé composé." },
+  { cat: "Tenses", q: "The most natural spoken way to say “I’m going to eat”:",
+    opts: ["Je vais manger", "Je mangerai", "Je mange manger", "J’aurai mangé"], a: 0,
+    why: "Futur proche (aller + infinitive) is the default spoken future. Je mangerai is correct but more formal/distant." },
+  { cat: "Tenses", q: "« Quand je suis arrivé, elle ___ déjà ___. » (she had already left)",
+    opts: ["était … partie", "est … partie", "sera … partie", "avait … parti"], a: 0,
+    why: "Past before the past → plus-que-parfait: imparfait of être (partir takes être) + participle, with agreement: elle était partie." },
+  { cat: "Tenses", q: "« Si j’avais le temps, je ___ plus. » (If I had time, I would travel more)",
+    opts: ["voyagerais", "voyagerai", "voyageais", "voyage"], a: 0,
+    why: "Si + imparfait pairs with the conditional: voyagerais. Never a conditional in the si-half itself." },
+  { cat: "Tenses", q: "“When I was little, we used to go to Brittany.” — Quand j’étais petit, on ___ en Bretagne.",
+    opts: ["allait", "est allé", "ira", "irait"], a: 0,
+    why: "A habit in the past → imparfait. “Used to …” is nearly always imparfait." },
+  { cat: "Tenses", q: "The past participle of prendre is:",
+    opts: ["pris", "prendu", "prené", "prit"], a: 0,
+    why: "J’ai pris. (Il prit exists, but it’s the literary passé simple, not the participle.)" },
+  { cat: "Tenses", q: "« Je viens de manger » means:",
+    opts: ["I just ate", "I’m coming to eat", "I’ve been eating for a while", "I want to eat"], a: 0,
+    why: "Venir de + infinitive = the immediate past: “I just did X”. A lever verb well worth owning." },
+  { cat: "Tenses", q: "« J’ai su » usually means:",
+    opts: ["I found out", "I knew (all along)", "I will know", "I doubted"], a: 0,
+    why: "Savoir changes flavour in the passé composé: j’ai su = I found out. “I knew” as a state is je savais." },
+  { cat: "Tenses", q: "Which tense do you meet in novels but almost never in speech?",
+    opts: ["Le passé simple", "Le passé composé", "L’imparfait", "Le futur proche"], a: 0,
+    why: "Passé simple (il alla, elle fit) is literary. Learn to recognise it; speak with the passé composé." },
+  { cat: "Tenses", q: "The futur simple of aller, « je » form:",
+    opts: ["j’irai", "j’allerai", "je vais", "j’aille"], a: 0,
+    why: "Aller has the irregular future stem ir-: j’irai, tu iras… (Same stem gives the conditional j’irais.)" },
+
+  // ---- Spoken French ----
+  { cat: "Spoken French", q: "« Il pleuvait, du coup on est restés à la maison. » — du coup means:",
+    opts: ["so / as a result", "suddenly", "of the blow", "luckily"], a: 0,
+    why: "Du coup = “so / as a consequence” — modern spoken French’s favourite connector." },
+  { cat: "Spoken French", q: "« C’est quand même incroyable ! » — here quand même adds:",
+    opts: ["emphasis (“really”)", "a question", "doubt", "politeness"], a: 0,
+    why: "Core meaning “all the same”, but with tone it becomes emphasis: “It really is incredible!”" },
+  { cat: "Spoken French", q: "« Au fait » means:",
+    opts: ["by the way", "actually", "in fact", "at last"], a: 0,
+    why: "Au fait = “by the way” (new topic). En fait = “actually” (correction). Easy to mix up, worth keeping apart." },
+  { cat: "Spoken French", q: "You’ve rambled through a long story and want to wrap it up. You say:",
+    opts: ["Bref…", "Genre…", "Quoi…", "Ben…"], a: 0,
+    why: "Bref = “long story short / anyway”. The official rambling-story exit." },
+  { cat: "Spoken French", q: "« T’inquiète » means:",
+    opts: ["Don’t worry", "Worry!", "Are you worried?", "How worrying"], a: 0,
+    why: "Short for ne t’inquiète pas — spoken French dropped both the ne AND the pas here. It means “don’t worry”." },
+  { cat: "Spoken French", q: "Someone asks if the film was good. « Bof » means:",
+    opts: ["meh", "amazing", "terrible", "I didn’t see it"], a: 0,
+    why: "Bof = underwhelmed indifference. The national shrug, in word form." },
+  { cat: "Spoken French", q: "You don’t know the word for an object. You call it:",
+    opts: ["un truc", "un objet inconnu", "une parole", "un truc doesn’t exist"], a: 0,
+    why: "Un truc (or un machin) = “a thingy”. French people use it constantly for objects whose name escapes them." },
+  { cat: "Spoken French", q: "« Ça y est ! » means:",
+    opts: ["That’s it / done!", "There it is (pointing)", "Go away!", "It’s over there"], a: 0,
+    why: "Ça y est (pronounced “sa-yé”) = “that’s it / it’s done / finally”. — Ça y est, j’ai fini !" },
+  { cat: "Spoken French", q: "In everyday speech, « je ne sais pas » becomes:",
+    opts: ["je sais pas", "je ne sais", "ne sais pas", "je pas sais"], a: 0,
+    why: "Spoken French drops the ne and keeps the pas: je sais pas (often just “j’sais pas” → “shay pa”)." },
+  { cat: "Spoken French", q: "Spoken French mostly replaces « nous allons » with:",
+    opts: ["on va", "vous allez", "ils vont", "nous va"], a: 0,
+    why: "On has taken over from nous in speech — and it conjugates like il/elle, so it’s easier too." },
+
+  // ---- Core Verbs ----
+  { cat: "Core Verbs", q: "« J’ai eu » is:",
+    opts: ["passé composé of avoir — “I had / I got”", "avoir twice by mistake", "plus-que-parfait of avoir", "passé composé of être"], a: 0,
+    why: "Avoir helps everyone, including itself: ai = auxiliary (carries the tense), eu = participle of avoir (carries the meaning)." },
+  { cat: "Core Verbs", q: "« J’avais été » means:",
+    opts: ["I had been", "I was", "I have been", "I would be"], a: 0,
+    why: "Plus-que-parfait of être: imparfait of avoir (avais) + été. Matches English “had been” almost exactly." },
+  { cat: "Core Verbs", q: "Which auxiliary does être take in compound tenses?",
+    opts: ["avoir (j’ai été)", "être (je suis été)", "aller", "either one"], a: 0,
+    why: "Être never helps itself: it’s j’ai été, never “je suis été”." },
+  { cat: "Core Verbs", q: "« Elle ___ sortie hier soir. » (She went out last night)",
+    opts: ["est", "a", "avait être", "es"], a: 0,
+    why: "Sortir (movement, no direct object) takes être, and the participle agrees: elle est sortie." },
+  { cat: "Core Verbs", q: "« Elle ___ sorti la poubelle. » (She took out the bin)",
+    opts: ["a", "est", "être", "y a"], a: 0,
+    why: "Same verb, but with a direct object (la poubelle) sortir switches to avoir — and no agreement: elle a sorti." },
+  { cat: "Core Verbs", q: "“I’m hungry” in French:",
+    opts: ["J’ai faim", "Je suis faim", "Je fais faim", "J’ai faimé"], a: 0,
+    why: "French has hunger rather than being it: avoir faim/soif/chaud/froid/peur/raison… all use avoir." },
+  { cat: "Core Verbs", q: "“The weather is nice”:",
+    opts: ["Il fait beau", "Il est beau", "Il a beau", "C’est beau temps"], a: 0,
+    why: "Weather belongs to faire: il fait beau/froid/chaud/nuit." },
+  { cat: "Core Verbs", q: "« Ça fait deux ans que j’apprends le français » means:",
+    opts: ["I’ve been learning French for two years", "It makes two French years", "I learned French two years ago", "I’ll learn French in two years"], a: 0,
+    why: "Ça fait [duration] que + present = “I’ve been doing X for [duration]”. Note French uses the present tense here." },
+
+  // ---- Moods ----
+  { cat: "Moods", q: "« Il faut que j’y ___. » (I’ve got to go)",
+    opts: ["aille", "vais", "irai", "va"], a: 0,
+    why: "Il faut que triggers the subjunctive: aille (from aller). This exact sentence is said constantly — learn it as a chunk." },
+  { cat: "Moods", q: "« Je pense qu’il ___ raison. »",
+    opts: ["a", "ait", "soit", "aie"], a: 0,
+    why: "Affirmative penser que takes the plain indicative: il a raison. Only je NE pense PAS que… triggers the subjunctive." },
+  { cat: "Moods", q: "Subjunctive-free way to say « Il faut que je parte »:",
+    opts: ["Je dois partir", "Il faut que je pars", "Que je parte", "Je partirais que"], a: 0,
+    why: "Lever verbs (je dois / il faut + infinitive) take an infinitive, never the subjunctive. Same meaning, zero risk." },
+  { cat: "Moods", q: "« J’espère que tu ___ demain. » (I hope you’ll come)",
+    opts: ["viendras", "viennes", "sois venu", "vinsses"], a: 0,
+    why: "Espérer que is the famous exception among “feeling” verbs — it takes the indicative (here the future): tu viendras." },
+  { cat: "Moods", q: "« Que je fasse » is the subjunctive of:",
+    opts: ["faire", "falloir", "se fâcher", "fondre"], a: 0,
+    why: "Faire → que je fasse. One of the seven irregular subjunctives worth knowing (sois, aie, aille, fasse, puisse, sache, veuille)." },
+  { cat: "Moods", q: "Which sentence does NOT need the subjunctive?",
+    opts: ["Peut-être qu’il est en retard", "Il est possible qu’il soit en retard", "Je ne pense pas qu’il soit à l’heure", "Bien qu’il soit en retard"], a: 0,
+    why: "Peut-être que + indicative expresses the same doubt with no subjunctive — a top-tier avoidance trick." },
+  { cat: "Moods", q: "Same subject in both halves — French prefers:",
+    opts: ["an infinitive: je veux partir", "the subjunctive: je veux que je parte", "the conditional", "the imperative"], a: 0,
+    why: "When A wants A to do something, use the infinitive. The subjunctive only appears when A has feelings about B doing something." },
+
+  // ---- Pronouns ----
+  { cat: "Pronouns", q: "« Tu vas au bureau ? — Oui, j’___ vais. »",
+    opts: ["y", "en", "le", "lui"], a: 0,
+    why: "à + place → y: j’y vais = I’m going (there)." },
+  { cat: "Pronouns", q: "« Tu veux du café ? — Oui, j’___ veux bien. »",
+    opts: ["en", "y", "le", "la"], a: 0,
+    why: "du/de la/des + thing → en: j’en veux = I want some." },
+  { cat: "Pronouns", q: "“Did you see the film? — Yes, I saw it.”",
+    opts: ["Oui, je l’ai vu", "Oui, je lui ai vu", "Oui, j’y ai vu", "Oui, j’ai vu le"], a: 0,
+    why: "Direct object → le, shrinking to l’ before a vowel, placed before the auxiliary: je l’ai vu." },
+  { cat: "Pronouns", q: "“I’m going to phone her” (téléphoner à quelqu’un):",
+    opts: ["Je vais lui téléphoner", "Je vais la téléphoner", "Je vais y téléphoner", "Je vais téléphoner elle"], a: 0,
+    why: "Téléphoner à + person → indirect pronoun lui, placed before the infinitive: je vais lui téléphoner." },
+  { cat: "Pronouns", q: "« J’en ai marre » means:",
+    opts: ["I’m fed up", "I have some jam", "I’m at the harbour", "I’ve had two"], a: 0,
+    why: "En avoir marre = to be fed up. One of many everyday idioms frozen around en (je m’en fiche, ne t’en fais pas…)." },
+  { cat: "Pronouns", q: "« Il ___ a deux. » (There are two of them)",
+    opts: ["y en", "en y", "les y", "y les"], a: 0,
+    why: "y and en come last, and in that order: il y en a deux. (Il y a + en squeezed in the middle.)" },
+  { cat: "Pronouns", q: "« Je pense à ma mère » becomes:",
+    opts: ["Je pense à elle", "J’y pense", "Je lui pense", "J’en pense"], a: 0,
+    why: "Trick question! y replaces à + THING; for people after penser à, French uses the stressed pronoun: je pense à elle." }
+];
+
+// ------------------------------------------------------------------
+// Quiz engine
+// ------------------------------------------------------------------
+const CATS = ["Everything", "Tenses", "Spoken French", "Core Verbs", "Moods", "Pronouns"];
+let pool = [], current = 0, score = 0, activeCat = "Everything";
+
+const catsEl = document.getElementById("quizCats");
+const areaEl = document.getElementById("quizArea");
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function renderCats() {
+  catsEl.innerHTML = "";
+  CATS.forEach(cat => {
+    const b = document.createElement("button");
+    b.textContent = cat;
+    if (cat === activeCat) b.classList.add("active");
+    b.addEventListener("click", () => start(cat));
+    catsEl.appendChild(b);
+  });
+}
+
+function start(cat) {
+  activeCat = cat;
+  pool = shuffle(cat === "Everything" ? QUESTIONS : QUESTIONS.filter(q => q.cat === cat));
+  current = 0;
+  score = 0;
+  renderCats();
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (current >= pool.length) { renderScore(); return; }
+  const q = pool[current];
+
+  const card = document.createElement("div");
+  card.className = "quiz-card";
+
+  const prog = document.createElement("div");
+  prog.className = "quiz-progress";
+  prog.textContent = q.cat + " — question " + (current + 1) + " of " + pool.length +
+                     (current > 0 ? "  ·  score " + score + "/" + current : "");
+  card.appendChild(prog);
+
+  const qEl = document.createElement("div");
+  qEl.className = "quiz-question";
+  qEl.textContent = q.q;
+  card.appendChild(qEl);
+
+  const optsEl = document.createElement("div");
+  optsEl.className = "quiz-options";
+
+  // Shuffle the display order of options, remembering which is correct.
+  const order = shuffle(q.opts.map((_, i) => i));
+  order.forEach(i => {
+    const b = document.createElement("button");
+    b.textContent = q.opts[i];
+    b.addEventListener("click", () => answer(card, optsEl, order, i, q));
+    optsEl.appendChild(b);
+  });
+
+  card.appendChild(optsEl);
+  areaEl.innerHTML = "";
+  areaEl.appendChild(card);
+}
+
+function answer(card, optsEl, order, chosen, q) {
+  const buttons = Array.from(optsEl.children);
+  buttons.forEach((b, pos) => {
+    b.disabled = true;
+    if (order[pos] === q.a) b.classList.add("correct");
+    else if (order[pos] === chosen) b.classList.add("wrong");
+  });
+
+  if (chosen === q.a) score++;
+
+  const why = document.createElement("div");
+  why.className = "quiz-explanation";
+  why.textContent = (chosen === q.a ? "✅ " : "❌ ") + q.why;
+  card.appendChild(why);
+
+  const next = document.createElement("button");
+  next.className = "quiz-next";
+  next.textContent = current + 1 < pool.length ? "Next question →" : "See score →";
+  next.addEventListener("click", () => { current++; renderQuestion(); });
+  card.appendChild(next);
+  next.focus();
+}
+
+function renderScore() {
+  const pct = Math.round(100 * score / pool.length);
+  let verdict;
+  if (pct === 100)     verdict = "Parfait ! Chapeau. 🎩";
+  else if (pct >= 80)  verdict = "Très bien ! You clearly read the pages. 👏";
+  else if (pct >= 60)  verdict = "Pas mal du tout — a couple of pages are worth a re-read.";
+  else if (pct >= 40)  verdict = "Bon courage — the explanations above each answer are the shortcut.";
+  else                 verdict = "C’est pas grave ! Wrong answers with explanations teach fastest.";
+
+  areaEl.innerHTML =
+    '<div class="quiz-card quiz-score">' +
+      '<div class="big">' + score + " / " + pool.length + "</div>" +
+      "<p>" + verdict + "</p>" +
+      '<button class="quiz-next" id="againBtn">Try again</button>' +
+    "</div>";
+  document.getElementById("againBtn").addEventListener("click", () => start(activeCat));
+}
+
+start("Everything");
+</script>
+
+</body>
+</html>

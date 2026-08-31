@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core Verbs, Deep Dive — French Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="tricolore"></span>French Companion</a>
+    <div class="nav-links">
+      <a href="tenses.html">Tenses</a>
+      <a href="spoken-french.html">Spoken French</a>
+      <a href="speaking-tricks.html">Speaking Tricks</a>
+      <a href="core-verbs.html" class="active">Core Verbs</a>
+      <a href="moods.html">Moods</a>
+      <a href="pronouns.html">Pronouns</a>
+      <a href="quiz.html">Quiz</a>
+    </div>
+    <button class="practice-toggle" id="practiceToggle" title="Blur English translations to test yourself">🙈 Practice</button>
+  </nav>
+</header>
+
+<main class="container">
+
+<div class="page-title">
+  <h1>Core Verbs, Deep Dive</h1>
+  <p class="lede">Four verbs — <em>avoir, être, aller, faire</em> — do a huge share of the work
+  in French: as verbs in their own right, as auxiliaries, and inside dozens of idioms.
+  This page is the reference for how they combine, including the confusing double-ups
+  like <em>j’ai eu</em> and <em>j’ai été</em>.</p>
+</div>
+
+<div class="toc">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#two-hats">Verbs wearing two hats</a></li>
+    <li><a href="#jai-ete">j’ai été, j’avais été, j’ai eu — untangled</a></li>
+    <li><a href="#avoir">avoir — to have</a></li>
+    <li><a href="#etre">être — to be</a></li>
+    <li><a href="#aller">aller — to go</a></li>
+    <li><a href="#faire">faire — to do/make</a></li>
+    <li><a href="#agreement">Agreement in one minute</a></li>
+  </ul>
+</div>
+
+<h2 id="two-hats">Verbs wearing two hats</h2>
+<p>The key to every “why is avoir in there twice?” confusion is this:
+<strong>avoir and être each have two jobs.</strong></p>
+<ul>
+  <li><strong>As a meaning verb:</strong> <em>avoir</em> = to have, <em>être</em> = to be.</li>
+  <li><strong>As an auxiliary:</strong> a grammatical helper that carries the tense in compound
+  forms (<em>j’<u>ai</u> mangé</em>, <em>elle <u>est</u> partie</em>). Here it means nothing by
+  itself — it’s scaffolding, like English “have” in “I have eaten”.</li>
+</ul>
+<p>Since the auxiliary can attach to <em>any</em> verb — including avoir and être themselves —
+you get forms where the same verb appears in both jobs at once. That’s not an exception;
+it’s the system working normally.</p>
+
+<h2 id="jai-ete">j’ai été, j’avais été, j’ai eu — untangled</h2>
+
+<p>Apply the compound-tense recipe (auxiliary + participle) to être and avoir themselves.
+The participles are <strong class="fr-word">été</strong> (from être) and
+<strong class="fr-word">eu</strong> (from avoir), and both verbs take <strong>avoir</strong>
+as their auxiliary:</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th>Form</th><th>Recipe</th><th>Meaning</th></tr>
+  <tr><td><strong>j’ai été</strong></td><td>present of avoir + été</td><td>I was / I have been <span class="en">(passé composé of être)</span></td></tr>
+  <tr><td><strong>j’avais été</strong></td><td>imparfait of avoir + été</td><td>I had been <span class="en">(plus-que-parfait of être)</span></td></tr>
+  <tr><td><strong>j’ai eu</strong></td><td>present of avoir + eu</td><td>I had / I got <span class="en">(passé composé of avoir — avoir helping itself!)</span></td></tr>
+  <tr><td><strong>j’avais eu</strong></td><td>imparfait of avoir + eu</td><td>I had had <span class="en">(plus-que-parfait of avoir)</span></td></tr>
+  <tr><td><strong>j’aurai été / eu</strong></td><td>futur of avoir + participle</td><td>I will have been / had</td></tr>
+  <tr><td><strong>j’aurais été / eu</strong></td><td>conditionnel of avoir + participle</td><td>I would have been / had</td></tr>
+</table>
+</div>
+
+<div class="example">
+  <div class="fr">J’<span class="hl">ai été</span> malade la semaine dernière.</div>
+  <div class="en">I was ill last week. (a bounded episode → passé composé)</div>
+</div>
+<div class="example">
+  <div class="fr">J’<span class="hl">avais été</span> malade juste avant les vacances, donc j’étais fatigué.</div>
+  <div class="en">I had been ill just before the holidays, so I was tired. (past before the past)</div>
+</div>
+<div class="example">
+  <div class="fr">J’<span class="hl">ai eu</span> de la chance.</div>
+  <div class="en">I was lucky / I got lucky. (literally “I had luck” — avoir is both auxiliary and meaning verb)</div>
+</div>
+
+<div class="trick">
+  <strong>🪄 The rule, in one line</strong>
+  <em>“Avoir helps everyone — including être and itself.”</em> When you see two avoir-ish
+  words in a row, the first is the auxiliary (carries the tense), the second is a
+  participle (carries the meaning). Read <em>j’avais eu</em> as
+  [j’avais = tense: had] + [eu = meaning: had/got] — exactly like English “I <u>had</u> <u>had</u>”.
+</div>
+
+<div class="warn">
+  <strong>⚠️ j’ai été vs j’étais</strong>
+  Both translate as “I was”, so which? Same logic as any
+  <a href="tenses.html#pc-vs-imp">passé composé vs imparfait</a> choice:
+  <em>j’étais</em> for background states (<em>j’étais fatigué</em> — I was tired),
+  <em>j’ai été</em> for bounded episodes or changes (<em>j’ai été surpris</em> — I was surprised
+  [at that moment]). When in doubt with descriptions, <em>j’étais</em> is usually right.
+</div>
+
+<div class="tip">
+  <strong>💡 Bonus: “j’ai été” for “I went”</strong>
+  In casual speech you’ll hear <em>j’ai été à Paris</em> meaning “I went to Paris”
+  (standard: <em>je suis allé</em>). Considered incorrect by purists, said by millions daily.
+  Recognise it; imitate it or not, as you like.
+</div>
+
+<h2 id="avoir">avoir — to have</h2>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>Présent</th><th>Imparfait</th><th>Futur</th><th>Conditionnel</th></tr>
+  <tr><td>je/j’</td><td>ai</td><td>avais</td><td>aurai</td><td>aurais</td></tr>
+  <tr><td>tu</td><td>as</td><td>avais</td><td>auras</td><td>aurais</td></tr>
+  <tr><td>il/elle/on</td><td>a</td><td>avait</td><td>aura</td><td>aurait</td></tr>
+  <tr><td>nous</td><td>avons</td><td>avions</td><td>aurons</td><td>aurions</td></tr>
+  <tr><td>vous</td><td>avez</td><td>aviez</td><td>aurez</td><td>auriez</td></tr>
+  <tr><td>ils/elles</td><td>ont</td><td>avaient</td><td>auront</td><td>auraient</td></tr>
+</table>
+</div>
+<p>Participle: <strong class="fr-word">eu</strong> (pronounced “ü”, one sound). Auxiliary: avoir.</p>
+
+<p><strong>Where English uses “be”, French often uses avoir.</strong> This list is worth
+over-learning, because getting it wrong (<em>je suis faim</em>) is the classic tell:</p>
+
+<div class="example">
+  <div class="fr">avoir <span class="hl">faim</span> / <span class="hl">soif</span> / <span class="hl">chaud</span> / <span class="hl">froid</span> / <span class="hl">peur</span> / <span class="hl">raison</span> / <span class="hl">tort</span> / <span class="hl">sommeil</span> / <span class="hl">… ans</span></div>
+  <div class="en">to be hungry / thirsty / hot / cold / afraid / right / wrong / sleepy / … years old</div>
+</div>
+<div class="example">
+  <div class="fr">J’ai <span class="hl">besoin de</span> café. · J’ai <span class="hl">envie de</span> partir. · J’ai <span class="hl">hâte</span> !</div>
+  <div class="en">I need coffee. · I feel like leaving. · I can’t wait!</div>
+</div>
+<div class="example">
+  <div class="fr"><span class="hl">Il y a</span> un problème. · <span class="hl">Il y avait</span> du monde. · <span class="hl">Il y aura</span> du soleil.</div>
+  <div class="en">There’s a problem. · There were lots of people. · There’ll be sunshine. (il y a = avoir in disguise)</div>
+</div>
+
+<h2 id="etre">être — to be</h2>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>Présent</th><th>Imparfait</th><th>Futur</th><th>Conditionnel</th></tr>
+  <tr><td>je/j’</td><td>suis</td><td>étais</td><td>serai</td><td>serais</td></tr>
+  <tr><td>tu</td><td>es</td><td>étais</td><td>seras</td><td>serais</td></tr>
+  <tr><td>il/elle/on</td><td>est</td><td>était</td><td>sera</td><td>serait</td></tr>
+  <tr><td>nous</td><td>sommes</td><td>étions</td><td>serons</td><td>serions</td></tr>
+  <tr><td>vous</td><td>êtes</td><td>étiez</td><td>serez</td><td>seriez</td></tr>
+  <tr><td>ils/elles</td><td>sont</td><td>étaient</td><td>seront</td><td>seraient</td></tr>
+</table>
+</div>
+<p>Participle: <strong class="fr-word">été</strong>. Auxiliary: <strong>avoir</strong> —
+être never helps itself (<em>j’ai été</em>, never “je suis été”).</p>
+
+<p><strong>Être’s auxiliary club.</strong> As an auxiliary, être serves reflexive verbs
+(<em>je me suis levé</em>) and the movement/change verbs — a common mnemonic is
+<strong>DR &amp; MRS VANDERTRAMP</strong>:</p>
+
+<div class="example">
+  <div class="fr"><span class="hl">D</span>evenir <span class="hl">R</span>evenir <span class="hl">M</span>onter <span class="hl">R</span>ester <span class="hl">S</span>ortir <span class="hl">V</span>enir <span class="hl">A</span>ller <span class="hl">N</span>aître <span class="hl">D</span>escendre <span class="hl">E</span>ntrer <span class="hl">R</span>etourner <span class="hl">T</span>omber <span class="hl">R</span>entrer <span class="hl">A</span>rriver <span class="hl">M</span>ourir <span class="hl">P</span>artir</div>
+  <div class="en">Or just think: verbs about coming, going, and changing state. With être, the participle agrees: <em>elle est venue, ils sont partis</em>.</div>
+</div>
+
+<div class="warn">
+  <strong>⚠️ Six that switch sides</strong>
+  <em>Monter, descendre, sortir, rentrer, retourner, passer</em> take <strong>avoir</strong> when
+  they have a direct object: <em>Elle est sortie</em> (she went out) but
+  <em>Elle a sorti la poubelle</em> (she took out the bin).
+</div>
+
+<h2 id="aller">aller — to go</h2>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>Présent</th><th>Imparfait</th><th>Futur</th><th>Conditionnel</th></tr>
+  <tr><td>je/j’</td><td>vais</td><td>allais</td><td>irai</td><td>irais</td></tr>
+  <tr><td>tu</td><td>vas</td><td>allais</td><td>iras</td><td>irais</td></tr>
+  <tr><td>il/elle/on</td><td>va</td><td>allait</td><td>ira</td><td>irait</td></tr>
+  <tr><td>nous</td><td>allons</td><td>allions</td><td>irons</td><td>irions</td></tr>
+  <tr><td>vous</td><td>allez</td><td>alliez</td><td>irez</td><td>iriez</td></tr>
+  <tr><td>ils/elles</td><td>vont</td><td>allaient</td><td>iront</td><td>iraient</td></tr>
+</table>
+</div>
+<p>Participle: <strong class="fr-word">allé</strong>. Auxiliary: <strong>être</strong>
+(<em>je suis allé</em>).</p>
+
+<p><strong>Aller’s superpowers:</strong></p>
+<div class="example">
+  <div class="fr">Je <span class="hl">vais</span> te montrer.</div>
+  <div class="en">I’m going to show you. — aller + infinitive = the futur proche, your default spoken future.</div>
+</div>
+<div class="example">
+  <div class="fr">Ça <span class="hl">va</span> ? — Ça <span class="hl">va</span>. · Ça <span class="hl">va</span> aller.</div>
+  <div class="en">How’s it going? — Fine. · It’ll be OK. (aller also means “to be doing [well/badly]”)</div>
+</div>
+<div class="example">
+  <div class="fr">On y <span class="hl">va</span> ? · Allez !</div>
+  <div class="en">Shall we go? · Come on! / Go on! (<em>Allez</em> doubles as all-purpose encouragement)</div>
+</div>
+
+<h2 id="faire">faire — to do / to make</h2>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>Présent</th><th>Imparfait</th><th>Futur</th><th>Conditionnel</th></tr>
+  <tr><td>je</td><td>fais</td><td>faisais</td><td>ferai</td><td>ferais</td></tr>
+  <tr><td>tu</td><td>fais</td><td>faisais</td><td>feras</td><td>ferais</td></tr>
+  <tr><td>il/elle/on</td><td>fait</td><td>faisait</td><td>fera</td><td>ferait</td></tr>
+  <tr><td>nous</td><td>faisons</td><td>faisions</td><td>ferons</td><td>ferions</td></tr>
+  <tr><td>vous</td><td>faites</td><td>faisiez</td><td>ferez</td><td>feriez</td></tr>
+  <tr><td>ils/elles</td><td>font</td><td>faisaient</td><td>feront</td><td>feraient</td></tr>
+</table>
+</div>
+<p>Participle: <strong class="fr-word">fait</strong>. Auxiliary: avoir.
+(Pronunciation quirk: <em>faisons/faisais</em> — the “ai” sounds like “euh”: “f<em>euh</em>-zon”.)</p>
+
+<p><strong>Faire is everywhere:</strong> weather, activities, and a mountain of idioms.</p>
+<div class="example">
+  <div class="fr">Il <span class="hl">fait</span> beau / froid / chaud / nuit.</div>
+  <div class="en">The weather’s nice / it’s cold / hot / dark. (weather belongs to faire, not être)</div>
+</div>
+<div class="example">
+  <div class="fr"><span class="hl">faire</span> du sport · <span class="hl">faire</span> les courses · <span class="hl">faire</span> la cuisine · <span class="hl">faire</span> attention · <span class="hl">faire</span> semblant · <span class="hl">faire</span> exprès</div>
+  <div class="en">to do sport · do the shopping · cook · pay attention · pretend · do it on purpose</div>
+</div>
+<div class="example">
+  <div class="fr">Ça <span class="hl">fait</span> combien ? · Ça <span class="hl">fait</span> deux ans que j’apprends le français.</div>
+  <div class="en">How much is that? · I’ve been learning French for two years. (<em>ça fait … que</em> = “it’s been … that”)</div>
+</div>
+<div class="example">
+  <div class="fr">Je vais <span class="hl">faire réparer</span> ma voiture.</div>
+  <div class="en">I’m going to have my car repaired. (faire + infinitive = to have something done)</div>
+</div>
+
+<h2 id="agreement">Agreement in one minute</h2>
+<ul>
+  <li><strong>With être:</strong> participle agrees with the subject.
+  <em>Elle est partie. Ils sont arrivés.</em></li>
+  <li><strong>With avoir:</strong> no agreement… <em>unless</em> the direct object comes before
+  the verb: <em>J’ai vu les photos → Je <u>les</u> ai vu<strong>es</strong>.</em></li>
+  <li><strong>Good news:</strong> most of these agreements are silent in speech
+  (parti/partie sound identical). Care about them when writing; don’t let them slow your speaking.</li>
+</ul>
+
+<div class="page-nav">
+  <a href="speaking-tricks.html">← Speaking Tricks</a>
+  <a href="moods.html">Moods →</a>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div>French Companion — a personal reference for French learners. <em>Bon courage&nbsp;!</em></div>
+</footer>
+
+</body>
+</html>

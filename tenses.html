@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every Tense, Simply — French Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="tricolore"></span>French Companion</a>
+    <div class="nav-links">
+      <a href="tenses.html" class="active">Tenses</a>
+      <a href="spoken-french.html">Spoken French</a>
+      <a href="speaking-tricks.html">Speaking Tricks</a>
+      <a href="core-verbs.html">Core Verbs</a>
+      <a href="moods.html">Moods</a>
+      <a href="pronouns.html">Pronouns</a>
+      <a href="quiz.html">Quiz</a>
+    </div>
+    <button class="practice-toggle" id="practiceToggle" title="Blur English translations to test yourself">🙈 Practice</button>
+  </nav>
+</header>
+
+<main class="container">
+
+<div class="page-title">
+  <h1>Every Tense, Simply</h1>
+  <p class="lede">One tense at a time: what it means in plain English, how to build it,
+  and the mistakes to watch for. Bookmark this page — forgetting these is normal.</p>
+</div>
+
+<div class="toc">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#present">Le présent</a></li>
+    <li><a href="#pc">Le passé composé</a></li>
+    <li><a href="#imparfait">L’imparfait</a></li>
+    <li><a href="#pc-vs-imp">Passé composé vs imparfait</a></li>
+    <li><a href="#pqp">Le plus-que-parfait</a></li>
+    <li><a href="#futur-proche">Le futur proche</a></li>
+    <li><a href="#futur-simple">Le futur simple</a></li>
+    <li><a href="#futur-anterieur">Le futur antérieur</a></li>
+    <li><a href="#cond-present">Le conditionnel présent</a></li>
+    <li><a href="#cond-passe">Le conditionnel passé</a></li>
+    <li><a href="#passe-simple">Le passé simple (recognise only)</a></li>
+    <li><a href="#cheatsheet">Cheat sheet</a></li>
+  </ul>
+</div>
+
+<div class="tip">
+  <strong>💡 The big picture</strong>
+  French tenses come in pairs: a <em>simple</em> form (one word: <em>je mange</em>) and a
+  <em>compound</em> form built with an auxiliary — <em>avoir</em> or <em>être</em> — plus a past
+  participle (<em>j’ai mangé</em>). Once you know the simple tenses, every compound tense is
+  “conjugate the auxiliary in that tense, add the participle”. That one idea unlocks half this page.
+</div>
+
+<h2 id="present">Le présent — the present</h2>
+<p><strong>What it means:</strong> what is happening now, what happens in general, and — more than in
+English — what is about to happen. French has no separate “-ing” form:
+<em>je mange</em> covers both “I eat” and “I am eating”.</p>
+
+<div class="example">
+  <div class="fr">Je <span class="hl">travaille</span> à Londres.</div>
+  <div class="en">I work in London. / I’m working in London.</div>
+</div>
+<div class="example">
+  <div class="fr">J’<span class="hl">arrive</span> dans deux minutes.</div>
+  <div class="en">I’ll be there in two minutes. (present used for the near future — very common)</div>
+</div>
+
+<p><strong>How to build it:</strong> regular <code>-er</code> verbs drop the ending and add
+<code>-e, -es, -e, -ons, -ez, -ent</code>. (<code>-ir</code>: <code>-is, -is, -it, -issons, -issez, -issent</code>;
+<code>-re</code>: <code>-s, -s, —, -ons, -ez, -ent</code>.)</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th></th><th>parler (to speak)</th><th>finir (to finish)</th><th>vendre (to sell)</th></tr>
+  <tr><td>je</td><td>parle</td><td>finis</td><td>vends</td></tr>
+  <tr><td>tu</td><td>parles</td><td>finis</td><td>vends</td></tr>
+  <tr><td>il/elle/on</td><td>parle</td><td>finit</td><td>vend</td></tr>
+  <tr><td>nous</td><td>parlons</td><td>finissons</td><td>vendons</td></tr>
+  <tr><td>vous</td><td>parlez</td><td>finissez</td><td>vendez</td></tr>
+  <tr><td>ils/elles</td><td>parlent</td><td>finissent</td><td>vendent</td></tr>
+</table>
+</div>
+
+<div class="trick">
+  <strong>🪄 Trick: “être en train de”</strong>
+  If you really want to stress that something is happening <em>right now</em>, use
+  <em>être en train de</em> + infinitive: <em>Je suis en train de manger</em> — “I’m (in the middle of) eating.”
+</div>
+
+<h2 id="pc">Le passé composé — the everyday past</h2>
+<p><strong>What it means:</strong> a completed action. “I did it, it happened, it’s done.”
+This is <em>the</em> past tense of conversation — if you’re telling someone what happened
+yesterday, you live in the passé composé.</p>
+
+<p><strong>How to build it:</strong> present tense of <strong class="fr-word">avoir</strong>
+(or <strong class="fr-word">être</strong> for a small club of verbs) + past participle.</p>
+
+<div class="example">
+  <div class="fr">J’<span class="hl">ai mangé</span> une crêpe.</div>
+  <div class="en">I ate a crêpe. / I have eaten a crêpe. (French doesn’t distinguish these)</div>
+</div>
+<div class="example">
+  <div class="fr">Elle <span class="hl">est partie</span> à midi.</div>
+  <div class="en">She left at noon. (partir takes être — note the participle agrees: parti<strong>e</strong>)</div>
+</div>
+
+<p><strong>Which verbs take être?</strong> Reflexive verbs (<em>se lever, se souvenir…</em>) plus
+roughly the “coming and going” verbs: <em>aller, venir, arriver, partir, entrer, sortir, monter,
+descendre, rester, tomber, naître, mourir, retourner, passer, devenir, revenir</em>. With être,
+the participle agrees with the subject (<em>elles sont arrivées</em>).</p>
+
+<p><strong>Past participles:</strong> <code>-er → -é</code> (mangé), <code>-ir → -i</code> (fini),
+<code>-re → -u</code> (vendu). The important irregulars are worth just memorising:</p>
+
+<div class="table-scroll">
+<table>
+  <tr><th>Verb</th><th>Participle</th><th>Verb</th><th>Participle</th></tr>
+  <tr><td>avoir</td><td><strong>eu</strong></td><td>être</td><td><strong>été</strong></td></tr>
+  <tr><td>faire</td><td><strong>fait</strong></td><td>dire</td><td><strong>dit</strong></td></tr>
+  <tr><td>voir</td><td><strong>vu</strong></td><td>prendre</td><td><strong>pris</strong></td></tr>
+  <tr><td>pouvoir</td><td><strong>pu</strong></td><td>vouloir</td><td><strong>voulu</strong></td></tr>
+  <tr><td>devoir</td><td><strong>dû</strong></td><td>savoir</td><td><strong>su</strong></td></tr>
+  <tr><td>mettre</td><td><strong>mis</strong></td><td>écrire</td><td><strong>écrit</strong></td></tr>
+  <tr><td>boire</td><td><strong>bu</strong></td><td>lire</td><td><strong>lu</strong></td></tr>
+  <tr><td>venir</td><td><strong>venu</strong></td><td>ouvrir</td><td><strong>ouvert</strong></td></tr>
+</table>
+</div>
+
+<h2 id="imparfait">L’imparfait — the background past</h2>
+<p><strong>What it means:</strong> the past as scenery. Descriptions, habits, ongoing states —
+anything where you <em>can’t point at the moment it finished</em>. English equivalents:
+“was doing”, “used to do”, “would (habitually) do”, or plain “was/were”.</p>
+
+<div class="example">
+  <div class="fr">Quand j’étais petit, on <span class="hl">allait</span> en Bretagne chaque été.</div>
+  <div class="en">When I was little, we used to go to Brittany every summer. (habit)</div>
+</div>
+<div class="example">
+  <div class="fr">Il <span class="hl">pleuvait</span> et j’<span class="hl">étais</span> fatigué.</div>
+  <div class="en">It was raining and I was tired. (description / state)</div>
+</div>
+
+<p><strong>How to build it:</strong> take the <em>nous</em> form of the present, drop <code>-ons</code>,
+add <code>-ais, -ais, -ait, -ions, -iez, -aient</code>. This works for <em>every verb in French</em>
+except être (stem <code>ét-</code>: <em>j’étais</em>).</p>
+
+<div class="example">
+  <div class="fr">nous finiss<span class="hl">ons</span> → je finiss<span class="hl">ais</span> · nous fais<span class="hl">ons</span> → je fais<span class="hl">ais</span> · nous av<span class="hl">ons</span> → j’av<span class="hl">ais</span></div>
+  <div class="en">One rule, one exception (être). Genuinely the friendliest tense in the language.</div>
+</div>
+
+<h2 id="pc-vs-imp">Passé composé vs imparfait — the classic confusion</h2>
+<p>Both are “the past”, so which one? Think of telling a story as filming a scene:</p>
+<ul>
+  <li><strong>Imparfait = the camera panning over the scene.</strong> What things were like, what was going on.</li>
+  <li><strong>Passé composé = the events.</strong> The things that <em>happened</em>, one after another, moving the story forward.</li>
+</ul>
+
+<div class="example">
+  <div class="fr">Je <span class="hl">marchais</span> dans la rue quand j’<span class="hl">ai vu</span> un accident.</div>
+  <div class="en">I was walking down the street (background) when I saw an accident (event).</div>
+</div>
+<div class="example">
+  <div class="fr">Il <span class="hl">faisait</span> beau, alors on <span class="hl">a décidé</span> de sortir.</div>
+  <div class="en">The weather was nice (scenery), so we decided to go out (event).</div>
+</div>
+
+<div class="trick">
+  <strong>🪄 Trick: the interruption test</strong>
+  If you could naturally add “…when suddenly something happened”, it’s imparfait.
+  If it <em>is</em> the “something happened”, it’s passé composé. Also: “used to …” or
+  “was …-ing” in English → almost always imparfait.
+</div>
+
+<div class="warn">
+  <strong>⚠️ Watch out</strong>
+  Some verbs change flavour between the two: <em>je savais</em> = I knew (state) but
+  <em>j’ai su</em> = I found out; <em>je voulais</em> = I wanted, but <em>j’ai voulu</em> = I tried / decided to;
+  <em>je pouvais</em> = I was able (in general), <em>j’ai pu</em> = I managed to.
+</div>
+
+<h2 id="pqp">Le plus-que-parfait — the past before the past</h2>
+<p><strong>What it means:</strong> exactly English “had done”. You’re already talking about the
+past, and you need to reach back to something <em>even earlier</em>.</p>
+
+<p><strong>How to build it:</strong> <em>imparfait</em> of avoir/être + past participle.
+(Compound-tense rule in action: same recipe as passé composé, just move the auxiliary back a tense.)</p>
+
+<div class="example">
+  <div class="fr">Quand je suis arrivé, elle <span class="hl">était déjà partie</span>.</div>
+  <div class="en">When I arrived (past), she had already left (before that).</div>
+</div>
+<div class="example">
+  <div class="fr">Je ne savais pas que tu <span class="hl">avais vécu</span> en France.</div>
+  <div class="en">I didn’t know you had lived in France.</div>
+</div>
+
+<div class="tip">
+  <strong>💡 Rule of thumb</strong>
+  If you’d say “had + past participle” in English, use plus-que-parfait. The match is
+  nearly one-to-one, which makes this an easy tense that merely <em>looks</em> scary.
+</div>
+
+<h2 id="futur-proche">Le futur proche — “going to”</h2>
+<p><strong>What it means:</strong> “I’m going to do X.” Plans, intentions, things about to happen.
+In spoken French this has largely taken over from the futur simple.</p>
+
+<p><strong>How to build it:</strong> present of <strong class="fr-word">aller</strong> + infinitive. That’s it.</p>
+
+<div class="example">
+  <div class="fr">Je <span class="hl">vais appeler</span> ma mère ce soir.</div>
+  <div class="en">I’m going to call my mum tonight.</div>
+</div>
+<div class="example">
+  <div class="fr">Il <span class="hl">va pleuvoir</span>.</div>
+  <div class="en">It’s going to rain.</div>
+</div>
+
+<div class="trick">
+  <strong>🪄 Trick: your default future</strong>
+  When speaking, make futur proche your default. It’s always understood, never wrong in
+  conversation, and needs zero new conjugation — just <em>aller</em>, which you already know.
+  This is one of the great “lever verbs” — more on the <a href="speaking-tricks.html">Speaking Tricks</a> page.
+</div>
+
+<h2 id="futur-simple">Le futur simple — “will”</h2>
+<p><strong>What it means:</strong> “I will do X.” Predictions, promises, more distant or less
+certain futures, and writing. Feels slightly more formal/considered than futur proche.</p>
+
+<p><strong>How to build it:</strong> infinitive + <code>-ai, -as, -a, -ons, -ez, -ont</code>
+(the endings are basically <em>avoir</em>!). <code>-re</code> verbs drop the final e:
+<em>vendre → je vendrai</em>.</p>
+
+<div class="example">
+  <div class="fr">Je te <span class="hl">rappellerai</span> demain.</div>
+  <div class="en">I’ll call you back tomorrow.</div>
+</div>
+<div class="example">
+  <div class="fr">Quand tu <span class="hl">seras</span> grand, tu <span class="hl">comprendras</span>.</div>
+  <div class="en">When you’re older, you’ll understand. (French uses future after <em>quand</em> here — English uses present)</div>
+</div>
+
+<p><strong>Key irregular stems</strong> (same stems as the conditional — learn once, use twice):</p>
+<div class="table-scroll">
+<table>
+  <tr><th>Verb</th><th>Stem</th><th>Example</th></tr>
+  <tr><td>être</td><td>ser-</td><td>je serai — I will be</td></tr>
+  <tr><td>avoir</td><td>aur-</td><td>j’aurai — I will have</td></tr>
+  <tr><td>aller</td><td>ir-</td><td>j’irai — I will go</td></tr>
+  <tr><td>faire</td><td>fer-</td><td>je ferai — I will do</td></tr>
+  <tr><td>pouvoir</td><td>pourr-</td><td>je pourrai — I’ll be able to</td></tr>
+  <tr><td>venir</td><td>viendr-</td><td>je viendrai — I will come</td></tr>
+  <tr><td>voir</td><td>verr-</td><td>je verrai — I will see</td></tr>
+  <tr><td>vouloir</td><td>voudr-</td><td>je voudrai — I will want</td></tr>
+  <tr><td>devoir</td><td>devr-</td><td>je devrai — I will have to</td></tr>
+  <tr><td>savoir</td><td>saur-</td><td>je saurai — I will know</td></tr>
+</table>
+</div>
+
+<h2 id="futur-anterieur">Le futur antérieur — “will have done”</h2>
+<p><strong>What it means:</strong> something that will be finished before another future point.
+Compound-tense rule again: <em>futur simple</em> of avoir/être + participle.</p>
+
+<div class="example">
+  <div class="fr">Quand tu arriveras, j’<span class="hl">aurai fini</span>.</div>
+  <div class="en">By the time you arrive, I’ll have finished.</div>
+</div>
+
+<p>Low priority for speaking — recognise it, don’t stress about producing it.</p>
+
+<h2 id="cond-present">Le conditionnel présent — “would”</h2>
+<p><strong>What it means:</strong> “would”. Hypotheticals, politeness, softened statements.</p>
+
+<p><strong>How to build it:</strong> <em>future stem</em> + <em>imparfait endings</em>
+(<code>-ais, -ais, -ait, -ions, -iez, -aient</code>). If you know the future and the imparfait,
+the conditional is free.</p>
+
+<div class="example">
+  <div class="fr">Je <span class="hl">voudrais</span> un café, s’il vous plaît.</div>
+  <div class="en">I’d like a coffee, please. (the single most useful conjugated verb in France)</div>
+</div>
+<div class="example">
+  <div class="fr">Si j’avais le temps, je <span class="hl">voyagerais</span> plus.</div>
+  <div class="en">If I had the time, I would travel more.</div>
+</div>
+
+<div class="tip">
+  <strong>💡 The “si” pattern</strong>
+  <em>Si</em> + imparfait, then conditional: <em>Si j’<strong>étais</strong> riche, j’<strong>achèterais</strong> une maison.</em>
+  Never put the conditional in the <em>si</em> half — same as English never says “if I would be rich”.
+</div>
+
+<h2 id="cond-passe">Le conditionnel passé — “would have”</h2>
+<p><strong>What it means:</strong> “would have done” — regrets and might-have-beens.
+Conditional of avoir/être + participle.</p>
+
+<div class="example">
+  <div class="fr">J’<span class="hl">aurais aimé</span> venir, mais je travaillais.</div>
+  <div class="en">I would have liked to come, but I was working.</div>
+</div>
+<div class="example">
+  <div class="fr">Si j’avais su, je <span class="hl">serais resté</span> chez moi.</div>
+  <div class="en">If I’d known, I would have stayed home. (si + plus-que-parfait → conditionnel passé)</div>
+</div>
+
+<h2 id="passe-simple">Le passé simple — recognise, don’t produce</h2>
+<p>The literary past tense. You’ll meet it in novels and history books
+(<em>il alla, elle fit, ils furent</em>) but virtually never in speech — spoken French uses the
+passé composé instead. Learn to <em>recognise</em> the shapes, and move on with your life:</p>
+
+<div class="example">
+  <div class="fr">il <span class="hl">fut</span> (être) · il <span class="hl">eut</span> (avoir) · il <span class="hl">alla</span> (aller) · il <span class="hl">fit</span> (faire) · il <span class="hl">dit</span> (dire) · il <span class="hl">vint</span> (venir)</div>
+  <div class="en">If a verb form in a novel looks alien, it’s probably passé simple. Mentally swap in passé composé.</div>
+</div>
+
+<h2 id="cheatsheet">Cheat sheet</h2>
+<div class="table-scroll">
+<table>
+  <tr><th>Tense</th><th>English feel</th><th>Recipe</th><th>Example</th></tr>
+  <tr><td>Présent</td><td>do / am doing</td><td>stem + endings</td><td>je mange</td></tr>
+  <tr><td>Passé composé</td><td>did / have done</td><td><strong>present</strong> avoir/être + participle</td><td>j’ai mangé</td></tr>
+  <tr><td>Imparfait</td><td>was doing / used to</td><td>nous-stem + -ais…</td><td>je mangeais</td></tr>
+  <tr><td>Plus-que-parfait</td><td>had done</td><td><strong>imparfait</strong> avoir/être + participle</td><td>j’avais mangé</td></tr>
+  <tr><td>Futur proche</td><td>going to do</td><td>aller + infinitive</td><td>je vais manger</td></tr>
+  <tr><td>Futur simple</td><td>will do</td><td>infinitive + -ai…</td><td>je mangerai</td></tr>
+  <tr><td>Futur antérieur</td><td>will have done</td><td><strong>futur</strong> avoir/être + participle</td><td>j’aurai mangé</td></tr>
+  <tr><td>Conditionnel</td><td>would do</td><td>future stem + -ais…</td><td>je mangerais</td></tr>
+  <tr><td>Conditionnel passé</td><td>would have done</td><td><strong>conditionnel</strong> avoir/être + participle</td><td>j’aurais mangé</td></tr>
+  <tr><td>Passé simple</td><td>did (literary)</td><td>recognise only</td><td>il mangea</td></tr>
+</table>
+</div>
+
+<div class="tip">
+  <strong>💡 See the pattern?</strong>
+  Every compound tense is just avoir/être moved through the simple tenses. Master
+  the auxiliaries and the participles, and you get four tenses for the price of one.
+  That’s exactly what the <a href="core-verbs.html">Core Verbs deep dive</a> is for.
+</div>
+
+<div class="page-nav">
+  <a href="index.html">← Home</a>
+  <a href="spoken-french.html">Spoken French →</a>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div>French Companion — a personal reference for French learners. <em>Bon courage&nbsp;!</em></div>
+</footer>
+
+</body>
+</html>
